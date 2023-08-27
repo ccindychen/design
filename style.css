@@ -1,0 +1,366 @@
+body {
+  font-family: 'Prata', serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("https://assets-global.website-files.com/62e28cf08913e81176ba2c39/62e28cf08913e85135ba2db6_shadow-12.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+p {
+  font-size: 1.1rem; 
+
+}
+
+img{
+  border-radius: 30px;
+}
+
+video{
+   border-radius: 30px;
+}
+
+a{
+  text-decoration: none;
+}
+/* Nav bar */
+#nav {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 99;
+  border-bottom: 5px solid #000;
+  background-color: #fff; 
+
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-links a {
+  margin-right: 25px;
+}
+
+#nav a,
+a:visited {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 1.5rem;
+}
+
+#nav a:hover {
+  color: #A660A7;
+}
+
+#nav .current{
+  color: #A660A7;
+}
+
+
+.logohome img {
+  position: absolute;
+  z-index: 2;
+  width: 13%;
+  height: auto;
+}
+
+/* INTRO */
+.introcontent {
+  padding-top: 120px; 
+  height: 690px;
+
+
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.intro img {
+   width: 300px; /* Set the same value for width and height */
+  height: 300px;
+  border-radius: 50%; 
+  object-fit: cover;
+
+}
+
+.intro h1 {
+  font-size: 3.5rem; 
+  margin-bottom: 10px;
+ 
+}
+
+.intro p {
+  font-size: 1.5rem; 
+  text-align: center;
+}
+
+/* HOME PROJECTS */
+.projectcontent {
+}
+
+.projectcontent h1{
+  font-size: 3.5rem;
+  text-align: center;
+  color: #000;
+}
+
+.projects {
+  display: flex;
+  align-items: center;
+  margin: 150px;
+  position: relative; /* Add relative positioning to the container */
+}
+
+.projects .image {
+  position: relative;
+}
+
+.projects .image img {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.projects .image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 400px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.projects .image:hover::before {
+  opacity: 1;
+}
+
+.projects .view{
+  position: absolute;
+  top: 50%; /* Adjust as needed */
+  left: 50%; /* Adjust as needed */
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.projects .view h3{
+  font-size: 2rem;
+}
+
+.projects .image:hover .view{ /* Show text when hovering over the container */
+    opacity: 1;
+    top: 45%;
+}
+
+.projects .text {
+  flex: 2;
+  padding: 0 100px;
+  display: flex; /* Add this line to make text and p align vertically */
+  flex-direction: column; /* Add this line to make text and p stack vertically */
+  align-self: flex-start;
+
+}
+
+.projects .text p{
+  font-style: italic;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.projects .text h2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.projects .text a {
+  display: inline-block; /* Display as a block element while maintaining inline properties */
+  color: #FFF;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #b2a0ba;
+  margin-right: 20px; /* Adjust margin as needed */
+  padding: 13px;
+  text-align: center;
+  width: 200px; /* Set a fixed width for the anchor element */
+  border-radius: 50px;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+
+.projects .text a:hover {
+  background-color: #A660A7;
+}
+
+
+/* PASSION PAGE */
+.passiontitle h1{
+  padding-top: 120px; 
+  font-size: 3.5rem;
+  text-align: center;
+  color: #000;
+}
+
+.passiontitle h2{
+  font-size: 1rem;
+  text-align: center;
+  margin-top: -30px;
+  font-style: italic;
+}
+
+/* Common styling for both .gallery and #contentGrid */
+.gallery,
+#contentGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute items evenly along the row */
+  padding: 3rem;
+}
+
+.gallery-item,
+.contentItem {
+  position: relative;
+  margin: 40px; /* Adjust margin for spacing */
+  flex-basis: calc(50% - 80px); /* Two items per column with margin */
+  color: black;
+  text-align: left; 
+    overflow: hidden;
+}
+
+.gallery-item img,
+.contentImage,
+.contentVideo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.gallery-item .image-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+    transition: opacity 0.5s ease;
+     border-radius: 30px;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1; 
+}
+
+.overlay h1 {
+  color: white;
+  text-align: center;
+}
+
+.gallery-item p,
+.contentItem .contentDescription {
+  font-size: 1.5rem;
+}
+
+.gallery-item .desc {
+  position: relative;
+  padding-top: 20px; /* Add spacing below the overlay */
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .gallery-item,
+  .contentItem {
+    flex-basis: calc(100% - 40px); /* Full width on smaller screens with margin */
+    text-align: center; /* Center-align text on smaller screens */
+  }
+}
+
+/* Zodiac Page */
+.zodiac-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.zodiac-item {
+  flex: 0 0 calc(50% - 40px); /* Two items per row with margin */
+  margin: 20px; /* Adjust margin for spacing */
+  color: black;
+  text-align: center;
+}
+
+.zodiac-item img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+.zodiac-item video {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+
+}
+
+
+.zodiac-item .zodiac-desc p {
+  font-size: 1.2rem;
+  margin: 10px;
+
+}
+
+.arrow {
+  box-sizing: border-box;
+  height: 3vw;
+  width: 3vw;
+  border-style: solid;
+  border-color: black;
+  border-width: 0px 2px 2px 0px;
+  transform: rotate(45deg);
+  transition: border-width 150ms ease-in-out;
+  margin-top: 20px;
+
+}
+
+.arrow:hover {
+  border-bottom-width: 4px;
+  border-right-width: 4px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
